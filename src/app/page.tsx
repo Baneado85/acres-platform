@@ -7,25 +7,25 @@ import Footer from '@/components/sections/Footer'
 import GovernanceDashboard from '@/components/sections/GovernanceDashboard'
 import HeroSection from '@/components/sections/HeroSection'
 import Navbar from '@/components/sections/Navbar'
-import ParticleBackground from '@/components/sections/ParticleBackground'
 import PlatformModules from '@/components/sections/PlatformModules'
 import PricingSection from '@/components/sections/PricingSection'
 
 export default function Home() {
   return (
     <main className="relative min-h-screen overflow-hidden bg-acres-black">
-      <ParticleBackground />
-      <Navbar />
-      <HeroSection />
-      <PlatformModules />
-      <GovernanceDashboard />
-      <AIDocumentGenerator />
-      <AutomationMarketplace />
-      <PricingSection />
-      <CaseStudies />
-      <ContactSection />
-      <Footer />
-      <AIChat />
+      <div className="relative z-10">
+        <Navbar />
+        <HeroSection />
+        <PlatformModules />
+        <GovernanceDashboard />
+        <AIDocumentGenerator />
+        <AutomationMarketplace />
+        <PricingSection />
+        <CaseStudies />
+        <ContactSection />
+        <Footer />
+        <AIChat />
+      </div>
     </main>
   )
 }

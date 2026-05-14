@@ -35,10 +35,7 @@ export default function Navbar() {
   }, [])
 
   return (
-    <motion.nav
-      initial={{ y: -100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.8, ease: 'easeOut' }}
+    <nav
       className={`fixed left-0 right-0 top-0 z-50 transition-all duration-500 ${
         scrolled ? 'glass-strong border-b border-acres-cyan/10 shadow-2xl shadow-acres-cyan/5' : 'bg-transparent'
       }`}
@@ -120,6 +117,6 @@ export default function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.nav>
+    </nav>
   )
 }

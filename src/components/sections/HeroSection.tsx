@@ -1,6 +1,5 @@
 'use client'
 
-import { motion } from 'framer-motion'
 import { ArrowRight, Cpu, Play, Shield, TrendingUp, Users } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 
@@ -42,24 +41,24 @@ export default function HeroSection() {
       <div className="absolute inset-x-0 top-0 h-96 bg-[radial-gradient(circle_at_center,rgba(0,212,255,0.16),transparent_62%)]" />
 
       <div className="relative z-10 mx-auto max-w-7xl text-center">
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="glass mb-8 inline-flex items-center gap-2 rounded-full border border-acres-cyan/20 px-4 py-2">
+        <div className="glass mb-8 inline-flex items-center gap-2 rounded-full border border-acres-cyan/20 px-4 py-2">
           <div className="h-2 w-2 rounded-full bg-acres-cyan" />
           <span className="font-mono text-xs uppercase tracking-widest text-acres-cyan">Software interno para ACRES</span>
-        </motion.div>
+        </div>
 
-        <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15 }} className="mb-6 font-display text-5xl font-800 leading-none tracking-tight text-white md:text-7xl lg:text-8xl">
+        <h1 className="mb-6 font-display text-5xl font-800 leading-none tracking-tight text-white md:text-7xl lg:text-8xl">
           GOBIA
           <br />
           <span className="gradient-text-cyan">Juntas automatizadas</span>
           <br />
           <span className="text-4xl text-slate-300 md:text-5xl lg:text-6xl">para accionistas de ACRES</span>
-        </motion.h1>
+        </h1>
 
-        <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className="mx-auto mb-10 max-w-3xl text-lg leading-relaxed text-slate-400 md:text-xl">
+        <p className="mx-auto mb-10 max-w-3xl text-lg leading-relaxed text-slate-400 md:text-xl">
           Plataforma interna para que ACRES gestione juntas virtuales por Google Meet: asistencia, poderes, quórum, votaciones, acuerdos, transcripción, actas y evidencia sellada en blockchain.
-        </motion.p>
+        </p>
 
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.45 }} className="mb-16 flex flex-col items-center justify-center gap-4 sm:flex-row">
+        <div className="mb-16 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <a href="#contact" className="group flex items-center gap-2 rounded-xl bg-gradient-to-r from-acres-cyan to-acres-purple px-8 py-4 text-sm font-semibold text-white shadow-2xl shadow-acres-cyan/30 transition-all hover:opacity-90">
             Presentar propuesta
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -68,11 +67,11 @@ export default function HeroSection() {
             <Play className="h-4 w-4" />
             Ver flujo de junta
           </a>
-        </motion.div>
+        </div>
 
         <div className="mx-auto grid max-w-5xl grid-cols-2 gap-4 lg:grid-cols-4">
           {stats.map((stat, i) => (
-            <motion.div key={stat.label} initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.65 + i * 0.1 }} className="glass group rounded-2xl border border-acres-cyan/10 p-6 transition-all hover:border-acres-cyan/30 hover:shadow-lg hover:shadow-acres-cyan/10">
+            <div key={stat.label} className="glass group rounded-2xl border border-acres-cyan/10 p-6 transition-all hover:border-acres-cyan/30 hover:shadow-lg hover:shadow-acres-cyan/10">
               <div className="mb-3 flex items-center justify-between">
                 <stat.icon className="h-5 w-5 text-acres-cyan opacity-70" />
                 <div className="h-2 w-2 rounded-full bg-acres-cyan" />
@@ -81,7 +80,7 @@ export default function HeroSection() {
                 <AnimatedCounter target={stat.value} suffix={stat.suffix} />
               </div>
               <div className="text-xs leading-tight text-slate-400">{stat.label}</div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
