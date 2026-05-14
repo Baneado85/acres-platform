@@ -2,13 +2,13 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'ACRES Sociedad Titulizadora | AI-Powered Corporate Governance Platform',
-  description: 'Plataforma de gobernanza corporativa e inteligencia fiduciaria impulsada por IA para juntas de accionistas, procesos legales y operaciones de mercado de capitales.',
-  keywords: 'ACRES, Sociedad Titulizadora, gobernanza corporativa, fideicomiso, IA, LegalTech, FinTech, Perú, SMV, mercado de capitales',
-  authors: [{ name: 'ACRES Sociedad Titulizadora' }],
+  title: 'GOBIA | Software de Juntas y Gobernanza para ACRES',
+  description: 'GOBIA es una propuesta de software interno para ACRES: automatizacion de juntas virtuales, asistencia, poderes, quorum, votaciones, acuerdos, actas y evidencia auditable.',
+  keywords: 'GOBIA, ACRES, juntas de accionistas, gobernanza corporativa, quorum, votaciones, blockchain, IA, LegalTech, Peru',
+  authors: [{ name: 'GOBIA' }],
   openGraph: {
-    title: 'ACRES Sociedad Titulizadora | AI Governance Platform',
-    description: 'Transformando la gobernanza corporativa y operaciones fiduciarias con inteligencia artificial.',
+    title: 'GOBIA | Software interno de juntas para ACRES',
+    description: 'Automatizacion de sesiones virtuales, votos, poderes, acuerdos y documentos con IA y trazabilidad blockchain.',
     type: 'website',
   },
 }

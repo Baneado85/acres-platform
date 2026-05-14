@@ -1,18 +1,21 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { BarChart3, Bot, CalendarDays, CheckSquare, Clock, FileCheck, FileText, Mic, PieChart, Shield, UserCheck, Users, Vote, Workflow } from 'lucide-react'
+import { BarChart3, Bot, CalendarDays, CheckSquare, Clock, FileCheck, FileText, Fingerprint, Link2, Mic, PieChart, Shield, UserCheck, Users, Vote, Workflow } from 'lucide-react'
 import { useInView } from 'react-intersection-observer'
 
 const modules = [
-  { icon: Mic, title: 'Transcripción de reuniones', desc: 'Convierte audio y video en texto con identificación de temas, acuerdos e intervenciones.', tag: 'LIVE' },
-  { icon: Vote, title: 'Conteo automático de votos', desc: 'Calcula votos por acciones, porcentajes, abstenciones y votos en contra con trazabilidad.', tag: 'IA' },
-  { icon: Shield, title: 'Validación de quórum', desc: 'Cruza accionistas asistentes contra capital social y reglas estatutarias configurables.', tag: 'LEGAL' },
-  { icon: Users, title: 'Gestión de accionistas', desc: 'Centraliza acciones, poderes, representantes, restricciones y derecho a voto.', tag: 'CORE' },
-  { icon: FileText, title: 'Generación legal IA', desc: 'Produce borradores de actas, acuerdos, constancias y reportes revisables por abogados.', tag: 'DOCS' },
-  { icon: Workflow, title: 'Flujos fiduciarios', desc: 'Orquesta aprobaciones, responsables, plazos y evidencias para operaciones críticas.', tag: 'FLOW' },
+  { icon: Mic, title: 'Captura de sesión Meet', desc: 'Procesa grabación, audio o transcripción de Google Meet para detectar agenda, intervenciones y acuerdos.', tag: 'MEET' },
+  { icon: UserCheck, title: 'Asistencia y representantes', desc: 'Cruza asistentes de Meet con accionistas, invitados, apoderados y representantes registrados.', tag: 'ASIST' },
+  { icon: Fingerprint, title: 'Validación de poderes', desc: 'Permite cargar poderes, vigencias y facultades para saber si una persona puede asistir y votar.', tag: 'PODER' },
+  { icon: Shield, title: 'Cálculo de quórum', desc: 'Calcula quórum por acciones, porcentaje de capital y reglas de junta ordinaria o extraordinaria.', tag: 'LEGAL' },
+  { icon: Vote, title: 'Votación en plataforma', desc: 'Crea encuestas por acuerdo para votos a favor, en contra, abstenciones y votos observados.', tag: 'VOTO' },
+  { icon: BarChart3, title: 'Conteo ponderado', desc: 'Convierte cada voto en porcentaje según acciones representadas, no solo por número de personas.', tag: 'CALC' },
+  { icon: Link2, title: 'Registro blockchain', desc: 'Guarda hash de actas, votos, asistencia y evidencias para demostrar integridad sin exponer datos sensibles.', tag: 'CHAIN' },
+  { icon: FileText, title: 'Actas y acuerdos IA', desc: 'Produce borradores de actas, acuerdos, constancias y reportes revisables por abogados.', tag: 'DOCS' },
+  { icon: Workflow, title: 'Flujo post junta', desc: 'Orquesta revisión legal, aprobaciones, responsables, plazos y cierre documental.', tag: 'FLOW' },
   { icon: BarChart3, title: 'Analytics de gobernanza', desc: 'Dashboards de asistencia, participación, cumplimiento y evolución de acuerdos.', tag: 'DATA' },
-  { icon: CheckSquare, title: 'Cumplimiento SMV', desc: 'Checklist de obligaciones, vencimientos y alertas para documentación regulatoria.', tag: 'SMV' },
+  { icon: CheckSquare, title: 'Checklist regulatorio', desc: 'Lista obligaciones, vencimientos y documentos requeridos para cada tipo de junta.', tag: 'CHECK' },
   { icon: CalendarDays, title: 'Agenda inteligente', desc: 'Prepara puntos de agenda y seguimiento de compromisos después de cada junta.', tag: 'BOARD' },
   { icon: FileCheck, title: 'Seguimiento de resoluciones', desc: 'Traza cada acuerdo desde la aprobación hasta el cierre documental.', tag: 'TRACE' },
   { icon: PieChart, title: 'Reportes ejecutivos', desc: 'Entrega cuadros de asistencia, votación y acuerdos para directorio y gerencia.', tag: 'BI' },
@@ -32,12 +35,12 @@ export default function PlatformModules() {
             <span className="font-mono text-xs uppercase tracking-widest text-acres-cyan">Módulos de plataforma</span>
           </div>
           <h2 className="mb-6 font-display text-4xl font-800 leading-tight text-white md:text-6xl">
-            Ecosistema completo de
+            No es solo conteo:
             <br />
-            <span className="gradient-text-cyan">juntas y gobernanza IA</span>
+            <span className="gradient-text-cyan">es el ciclo completo de junta</span>
           </h2>
           <p className="mx-auto max-w-2xl text-lg leading-relaxed text-slate-400">
-            Una propuesta modular para empezar por servicio asistido por sesión y evolucionar hacia plataforma interna.
+            GOBIA cubre desde la convocatoria y validacion de poderes hasta votacion, acta, acuerdos y evidencia auditable.
           </p>
         </motion.div>
 

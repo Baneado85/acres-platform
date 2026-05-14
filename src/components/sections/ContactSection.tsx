@@ -29,9 +29,9 @@ export default function ContactSection() {
             <span className="font-mono text-xs uppercase tracking-widest text-acres-cyan">Contacto empresarial</span>
           </div>
           <h2 className="mb-4 font-display text-4xl font-800 leading-tight text-white md:text-6xl">
-            Comienza la
+            Presenta GOBIA como
             <br />
-            <span className="gradient-text-cyan">automatización de juntas</span>
+            <span className="gradient-text-cyan">software interno para ACRES</span>
           </h2>
         </motion.div>
 
@@ -48,9 +48,9 @@ export default function ContactSection() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5">
-                <h3 className="mb-6 font-display text-lg font-700 text-white">Solicitar demo / consultoría</h3>
+                <h3 className="mb-6 font-display text-lg font-700 text-white">Registrar interes / piloto</h3>
                 <div className="grid grid-cols-2 gap-2">
-                  {['demo', 'consultoría', 'piloto', 'soporte'].map((type) => (
+                  {['demo', 'piloto', 'software interno', 'servicio por junta'].map((type) => (
                     <button key={type} type="button" onClick={() => setForm((prev) => ({ ...prev, type }))} className={`rounded-xl border px-3 py-2.5 text-center font-mono text-xs transition-all ${form.type === type ? 'border-acres-cyan/40 bg-acres-cyan/20 text-acres-cyan' : 'glass border-acres-cyan/10 text-slate-400'}`}>
                       {type}
                     </button>
@@ -62,7 +62,7 @@ export default function ContactSection() {
                   <input required type="email" value={form.email} onChange={(e) => setForm((prev) => ({ ...prev, email: e.target.value }))} placeholder="Email" className="glass rounded-xl border border-acres-cyan/20 px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none" />
                   <input value={form.phone} onChange={(e) => setForm((prev) => ({ ...prev, phone: e.target.value }))} placeholder="Teléfono" className="glass rounded-xl border border-acres-cyan/20 px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none" />
                 </div>
-                <textarea required value={form.message} onChange={(e) => setForm((prev) => ({ ...prev, message: e.target.value }))} placeholder="Cuéntanos sobre las juntas, accionistas, documentos y dolores actuales..." rows={5} className="glass w-full resize-none rounded-xl border border-acres-cyan/20 px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none" />
+                <textarea required value={form.message} onChange={(e) => setForm((prev) => ({ ...prev, message: e.target.value }))} placeholder="Describe una junta: asistentes, accionistas, poderes, quorum, votos, acuerdos y documentos que hoy revisan manualmente..." rows={5} className="glass w-full resize-none rounded-xl border border-acres-cyan/20 px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none" />
                 <button disabled={loading} className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-acres-cyan to-acres-purple py-4 text-sm font-semibold text-white disabled:opacity-50">
                   {loading ? <><Loader2 className="h-4 w-4 animate-spin" /> Enviando...</> : <><Send className="h-4 w-4" /> Enviar solicitud</>}
                 </button>
@@ -73,7 +73,7 @@ export default function ContactSection() {
           <motion.div initial={{ opacity: 0, x: 30 }} animate={inView ? { opacity: 1, x: 0 } : {}} className="space-y-6">
             {[
               { icon: MapPin, label: 'Oficina principal', value: 'Lima, Perú' },
-              { icon: Mail, label: 'Email empresarial', value: 'contacto@acres.pe' },
+              { icon: Mail, label: 'Propuesta para', value: 'ACRES Sociedad Titulizadora' },
               { icon: Phone, label: 'Teléfono', value: '+51 1 628 5000' },
             ].map((info) => (
               <div key={info.label} className="glass flex items-start gap-4 rounded-2xl border border-acres-cyan/15 p-6">
@@ -92,7 +92,7 @@ export default function ContactSection() {
                 <div className="font-display text-sm font-700 text-white">Revisión legal obligatoria</div>
               </div>
               <p className="text-xs leading-relaxed text-slate-400">
-                La IA acelera el trabajo operativo, pero los abogados validan quórum, votos, acuerdos y documentos antes de cualquier emisión final.
+                GOBIA no reemplaza al abogado. Automatiza la carga, el conteo, la redaccion y la trazabilidad, pero la validacion legal final sigue en manos del equipo de ACRES.
               </p>
             </div>
           </motion.div>

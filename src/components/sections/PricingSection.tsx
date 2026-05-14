@@ -9,27 +9,27 @@ const plans = [
   {
     icon: Zap,
     name: 'Servicio por junta',
-    tagline: 'Entrada rápida para probar valor',
+    tagline: 'Procesar una sesion real de ACRES',
     priceMonthly: 1890,
     priceYearly: 15990,
-    features: ['Procesamiento de una junta virtual', 'Transcripción y resumen ejecutivo', 'Cuadro de asistencia y quórum', 'Conteo de votos por participación', 'Borrador de acta y acuerdos'],
+    features: ['Procesamiento de una junta virtual', 'Transcripcion y resumen ejecutivo', 'Cuadro de asistencia y quorum', 'Revision de poderes cargados', 'Conteo de votos por participacion', 'Borrador de acta y acuerdos'],
   },
   {
     icon: Building2,
     name: 'Professional',
-    tagline: 'Automatización recurrente',
+    tagline: 'GOBIA operativo para varias juntas',
     priceMonthly: 5490,
     priceYearly: 47990,
     popular: true,
-    features: ['Base de accionistas', 'Documentos IA ilimitados', 'Dashboard de gobernanza', 'Integración Google Meet/Drive', 'Votación asistida', 'Soporte prioritario'],
+    features: ['Base de accionistas y poderes', 'Documentos IA ilimitados', 'Dashboard de sesiones', 'Integracion Google Meet/Drive', 'Votacion dentro de plataforma', 'Registro blockchain de evidencias'],
   },
   {
     icon: Crown,
     name: 'Enterprise Governance',
-    tagline: 'Plataforma interna a medida',
+    tagline: 'Plataforma interna completa para ACRES',
     priceMonthly: 0,
     priceYearly: 0,
-    features: ['Usuarios ilimitados', 'IA corporativa personalizada', 'Integración ERP/core documental', 'API empresarial', 'SLA y seguridad avanzada', 'Capacitación y acompañamiento'],
+    features: ['Usuarios internos ilimitados', 'IA corporativa personalizada', 'Integracion documental y legal', 'API empresarial', 'SLA y seguridad avanzada', 'Capacitacion a abogados y operaciones'],
   },
 ]
 
@@ -47,9 +47,9 @@ export default function PricingSection() {
             <span className="font-mono text-xs uppercase tracking-widest text-acres-gold">Modelo comercial</span>
           </div>
           <h2 className="mb-4 font-display text-4xl font-800 leading-tight text-white md:text-6xl">
-            Propuesta por fases
+            Formas de vender GOBIA
             <br />
-            <span className="gradient-text-cyan">para cada nivel de adopción</span>
+            <span className="gradient-text-cyan">a ACRES sin empezar gigante</span>
           </h2>
           <div className="glass inline-flex items-center gap-3 rounded-xl border border-acres-cyan/20 p-1">
             <button onClick={() => setYearly(false)} className={`rounded-lg px-5 py-2 text-sm font-medium ${!yearly ? 'bg-acres-cyan/20 text-acres-cyan' : 'text-slate-400'}`}>Mensual</button>

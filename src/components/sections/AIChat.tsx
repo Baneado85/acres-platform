@@ -10,7 +10,7 @@ interface Message {
   timestamp: Date
 }
 
-const SYSTEM_CONTEXT = `Eres el Asistente Corporativo de IA de ACRES Sociedad Titulizadora. Ayudas con gobernanza corporativa, juntas de accionistas, conteo de votos, generación de documentos, fideicomisos, cumplimiento SMV y automatización de procesos. Responde siempre en español, de forma profesional, concisa y útil.`
+const SYSTEM_CONTEXT = `Eres el asistente de GOBIA, una propuesta de software interno para ACRES. Ayudas con juntas de accionistas virtuales, Google Meet, asistencia, poderes, quorum, conteo de votos ponderados, acuerdos, actas, evidencia blockchain y automatizacion legal-operativa. Responde siempre en español, de forma profesional, concisa y util.`
 
 export default function AIChat() {
   const [open, setOpen] = useState(false)
@@ -18,7 +18,7 @@ export default function AIChat() {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: 'assistant',
-      content: 'Bienvenido al asistente ACRES IA. Puedo ayudarte con juntas, quórum, votaciones, acuerdos y borradores legales.',
+      content: 'Bienvenido al asistente GOBIA. Puedo ayudarte con juntas virtuales, poderes, quorum, votaciones, acuerdos, actas y evidencia auditable.',
       timestamp: new Date(),
     },
   ])
@@ -107,7 +107,7 @@ export default function AIChat() {
                     <Bot className="h-4 w-4 text-white" />
                   </div>
                   <div>
-                    <div className="font-display text-sm font-700 text-white">Asistente ACRES IA</div>
+                    <div className="font-display text-sm font-700 text-white">Asistente GOBIA</div>
                     <div className="font-mono text-[10px] text-acres-cyan">Gemini AI</div>
                   </div>
                 </div>

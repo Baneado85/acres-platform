@@ -1,14 +1,15 @@
-# ACRES Platform
+# GOBIA - ACRES Platform
 
-Plataforma demo para una propuesta de automatizacion de juntas de accionistas, gobernanza corporativa y generacion documental asistida por IA para ACRES Sociedad Titulizadora.
+Plataforma demo para presentar GOBIA, una propuesta de software interno para ACRES Sociedad Titulizadora. El objetivo es automatizar juntas virtuales de accionistas: asistencia, poderes, quorum, votaciones, acuerdos, actas y evidencia auditable.
 
 ## Que Incluye
 
-- Landing interactiva para presentar la propuesta.
+- Landing interactiva para presentar GOBIA como herramienta para ACRES.
 - Dashboard de gobernanza y estructura accionarial.
-- Modulos para asistencia, quorum, votacion, actas y seguimiento de acuerdos.
+- Modulos para Google Meet, asistencia, poderes, quorum, votacion, actas y seguimiento de acuerdos.
+- Registro conceptual de hashes en blockchain para integridad de evidencias.
 - Generador de documentos legales conectado a Gemini API.
-- Chat corporativo IA para consultas sobre gobernanza, fideicomisos y juntas.
+- Chat corporativo IA para consultas sobre sesiones, votos, poderes y documentos.
 - Marketplace conceptual de agentes de automatizacion.
 - Modelo comercial por fases: servicio por junta, plan recurrente y plataforma enterprise.
 
@@ -101,4 +102,4 @@ npm run deploy   # build y publicacion con gh-pages
 
 ## Nota Legal
 
-Esta plataforma es una demo/propuesta. La IA acelera tareas operativas como transcripcion, resumen, conteo preliminar y redaccion de borradores, pero todo documento, quorum, voto y acuerdo debe ser validado por abogados antes de su uso formal.
+Esta plataforma es una demo/propuesta. La IA acelera tareas operativas como transcripcion, resumen, conteo preliminar y redaccion de borradores, pero todo documento, quorum, voto, poder y acuerdo debe ser validado por abogados antes de su uso formal. El componente blockchain debe registrar evidencias o hashes, no datos sensibles en texto plano.

@@ -39,7 +39,7 @@ export default function AIDocumentGenerator() {
 
     setLoading(true)
     setGenerated('')
-    const prompt = `Eres un experto en derecho corporativo peruano y mercados de capitales. Genera un documento profesional del tipo "${selectedDoc}" para ACRES Sociedad Titulizadora. Detalles: ${details}. Incluye encabezado, antecedentes, considerandos, acuerdos, cuadro de votación cuando aplique y firmas. Responde en español.`
+    const prompt = `Eres un experto en derecho corporativo peruano y juntas de accionistas. Genera un documento profesional del tipo "${selectedDoc}" para uso interno de ACRES dentro de GOBIA. Detalles: ${details}. Incluye encabezado, antecedentes, considerandos, acuerdos, cuadro de asistencia, quorum y votacion cuando aplique, observaciones sobre poderes y firmas. Responde en español.`
 
     try {
       const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${key}`, {
@@ -72,7 +72,7 @@ export default function AIDocumentGenerator() {
     const url = URL.createObjectURL(blob)
     const a = document.createElement('a')
     a.href = url
-    a.download = `${selectedDoc.replace(/ /g, '_')}_ACRES.txt`
+    a.download = `${selectedDoc.replace(/ /g, '_')}_GOBIA.txt`
     a.click()
     URL.revokeObjectURL(url)
   }
@@ -87,9 +87,9 @@ export default function AIDocumentGenerator() {
             <span className="font-mono text-xs uppercase tracking-widest text-acres-violet">Generador legal IA</span>
           </div>
           <h2 className="mb-4 font-display text-4xl font-800 leading-tight text-white md:text-6xl">
-            Documentos legales
+            Actas, acuerdos
             <br />
-            <span className="gradient-text-cyan">generados por IA</span>
+            <span className="gradient-text-cyan">y reportes de junta</span>
           </h2>
         </motion.div>
 
@@ -124,7 +124,7 @@ export default function AIDocumentGenerator() {
 
             <div>
               <label className="mb-2 block font-mono text-xs uppercase tracking-wider text-slate-400">Detalles y contexto</label>
-              <textarea value={details} onChange={(e) => setDetails(e.target.value)} rows={5} placeholder="Ej: Junta del 15 de enero. Quórum 85%. Puntos: estados financieros, distribución de dividendos, elección de directorio..." className="glass w-full resize-none rounded-xl border border-acres-cyan/20 px-4 py-3 font-mono text-sm text-white placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-acres-cyan/40" />
+              <textarea value={details} onChange={(e) => setDetails(e.target.value)} rows={5} placeholder="Ej: Junta del 15 de enero. Quorum 85%. Asistentes por Meet. Poderes validados: 12. Acuerdo 1 aprobado 94%, 2 votos en contra, 1 abstencion..." className="glass w-full resize-none rounded-xl border border-acres-cyan/20 px-4 py-3 font-mono text-sm text-white placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-acres-cyan/40" />
             </div>
 
             <div>

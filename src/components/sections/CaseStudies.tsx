@@ -9,7 +9,7 @@ const results = [
   { icon: Zap, metric: '70%', label: 'Flujos más rápidos', detail: 'Actas y acuerdos pasan de días a horas con revisión legal.' },
   { icon: Shield, metric: '95%', label: 'Precisión asistida', detail: 'Conteo auditable con validación humana obligatoria.' },
   { icon: Clock, metric: '3x', label: 'Cierre documental', detail: 'Más velocidad para cerrar paquetes post junta.' },
-  { icon: Award, metric: '99%', label: 'Trazabilidad', detail: 'Cada dato usado queda asociado a sesión, asistente y documento.' },
+  { icon: Award, metric: '99%', label: 'Trazabilidad', detail: 'Cada dato queda asociado a sesion, asistente, poder, voto, documento y hash.' },
   { icon: BarChart2, metric: '40%', label: 'Productividad', detail: 'Equipos legales enfocan más tiempo en criterio y menos en transcripción.' },
 ]
 
@@ -25,9 +25,9 @@ export default function CaseStudies() {
             <span className="font-mono text-xs uppercase tracking-widest text-acres-cyan">Impacto esperado</span>
           </div>
           <h2 className="mb-4 font-display text-4xl font-800 leading-tight text-white md:text-6xl">
-            Resultados para
+            Impacto para
             <br />
-            <span className="gradient-text-cyan">equipos legales y accionistas</span>
+            <span className="gradient-text-cyan">los abogados de ACRES</span>
           </h2>
         </motion.div>
 

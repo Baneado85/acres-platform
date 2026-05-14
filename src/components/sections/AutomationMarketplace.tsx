@@ -7,15 +7,15 @@ import { useInView } from 'react-intersection-observer'
 
 const categories = ['Todos', 'Gobernanza', 'Legal IA', 'Compliance', 'Analytics', 'Fiduciaria', 'Mercados']
 const tools = [
-  { icon: Bot, name: 'GovBot IA', category: 'Gobernanza', desc: 'Asistente especializado en juntas y decisiones corporativas.', rating: 4.9, users: '2.3K', tag: 'Destacado' },
-  { icon: FileText, name: 'LegalDraft Pro', category: 'Legal IA', desc: 'Generación de actas, resoluciones y reportes revisables.', rating: 4.8, users: '1.8K', tag: 'Popular' },
-  { icon: Shield, name: 'ComplianceAI', category: 'Compliance', desc: 'Alertas de cumplimiento regulatorio y vencimientos SMV.', rating: 4.9, users: '3.1K', tag: 'Enterprise' },
-  { icon: BarChart2, name: 'ShareholderIQ', category: 'Analytics', desc: 'Análisis de estructura accionarial y comportamiento votante.', rating: 4.7, users: '987', tag: 'Analytics' },
-  { icon: Workflow, name: 'TrustFlow', category: 'Fiduciaria', desc: 'Automatización de flujos fiduciarios y aprobaciones.', rating: 4.8, users: '1.2K', tag: 'Pro+' },
-  { icon: TrendingUp, name: 'CapMarkets AI', category: 'Mercados', desc: 'Inteligencia de mercados de capitales y emisiones.', rating: 4.6, users: '756', tag: 'Markets' },
-  { icon: Users, name: 'MeetingMind', category: 'Gobernanza', desc: 'Transcripción y análisis IA de juntas de accionistas.', rating: 4.9, users: '4.2K', tag: 'Top' },
-  { icon: Clock, name: 'TimelineAI', category: 'Analytics', desc: 'Cronología visual de acuerdos y documentos.', rating: 4.5, users: '623', tag: 'Nuevo' },
-  { icon: CheckCircle, name: 'QuorumCheck', category: 'Gobernanza', desc: 'Validación automática de quórum y poderes.', rating: 4.8, users: '2.1K', tag: 'Legal' },
+  { icon: Bot, name: 'GOBIA Copilot', category: 'Gobernanza', desc: 'Asistente interno para preguntas sobre sesiones, acuerdos, votos y evidencias.', rating: 4.9, users: 'ACRES', tag: 'Core' },
+  { icon: Users, name: 'Meet Intake', category: 'Gobernanza', desc: 'Importa asistentes, grabaciones y transcripciones desde Google Meet.', rating: 4.9, users: 'Meet', tag: 'Entrada' },
+  { icon: Shield, name: 'PowerCheck', category: 'Compliance', desc: 'Valida poderes, vigencias, facultades y representacion antes de votar.', rating: 4.8, users: 'Legal', tag: 'Poderes' },
+  { icon: CheckCircle, name: 'Quorum Engine', category: 'Gobernanza', desc: 'Calcula quorum por capital representado y reglas de la junta.', rating: 4.8, users: 'Junta', tag: 'Quorum' },
+  { icon: FileText, name: 'LegalDraft', category: 'Legal IA', desc: 'Genera borradores de actas, acuerdos y constancias para revision legal.', rating: 4.8, users: 'Docs', tag: 'Actas' },
+  { icon: Workflow, name: 'AgreementFlow', category: 'Fiduciaria', desc: 'Gestiona tareas posteriores: responsables, plazos, firmas y cierre documental.', rating: 4.7, users: 'Flow', tag: 'Post' },
+  { icon: BarChart2, name: 'Vote Ledger', category: 'Analytics', desc: 'Cuenta votos ponderados y produce reportes por accionista, representante y acuerdo.', rating: 4.9, users: 'Votos', tag: 'Conteo' },
+  { icon: TrendingUp, name: 'ChainProof', category: 'Compliance', desc: 'Registra hashes de evidencia en blockchain para integridad y auditoria.', rating: 4.6, users: 'Hash', tag: 'Blockchain' },
+  { icon: Clock, name: 'Session Timeline', category: 'Analytics', desc: 'Crea una linea de tiempo de intervenciones, votaciones, acuerdos y documentos.', rating: 4.5, users: 'Hist', tag: 'Timeline' },
 ]
 
 export default function AutomationMarketplace() {
@@ -30,12 +30,12 @@ export default function AutomationMarketplace() {
         <motion.div initial={{ opacity: 0, y: 30 }} animate={inView ? { opacity: 1, y: 0 } : {}} className="mb-16 text-center">
           <div className="glass mb-6 inline-flex items-center gap-2 rounded-full border border-acres-cyan/20 px-4 py-2">
             <Zap className="h-3 w-3 text-acres-cyan" />
-            <span className="font-mono text-xs uppercase tracking-widest text-acres-cyan">Marketplace de automatización</span>
+            <span className="font-mono text-xs uppercase tracking-widest text-acres-cyan">Modulos automatizados de GOBIA</span>
           </div>
           <h2 className="mb-4 font-display text-4xl font-800 leading-tight text-white md:text-6xl">
-            Agentes IA
+            Varias automatizaciones
             <br />
-            <span className="gradient-text-cyan">para operaciones corporativas</span>
+            <span className="gradient-text-cyan">en una sola plataforma</span>
           </h2>
         </motion.div>
 

@@ -53,9 +53,9 @@ export default function Navbar() {
               <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-acres-cyan to-acres-purple opacity-30 blur-md transition-opacity group-hover:opacity-60" />
             </div>
             <div>
-              <div className="font-display text-sm font-800 uppercase leading-none tracking-widest text-white">ACRES</div>
+              <div className="font-display text-sm font-800 uppercase leading-none tracking-widest text-white">GOBIA</div>
               <div className="mt-0.5 font-mono text-[9px] uppercase leading-none tracking-[0.2em] text-acres-cyan/70">
-                Sociedad Titulizadora
+                Para ACRES
               </div>
             </div>
           </Link>
@@ -94,10 +94,10 @@ export default function Navbar() {
 
           <div className="hidden items-center gap-3 lg:flex">
             <button className="rounded-lg border border-acres-cyan/30 px-4 py-2 text-sm font-medium text-acres-cyan transition-all hover:bg-acres-cyan/10">
-              Iniciar Sesión
+              Acceso interno
             </button>
             <a href="#contact" className="rounded-lg bg-gradient-to-r from-acres-cyan to-acres-purple px-5 py-2 text-sm font-semibold text-white shadow-lg shadow-acres-cyan/20 transition-all hover:opacity-90">
-              Demo Empresarial
+              Ver propuesta
             </a>
           </div>
 

@@ -32,10 +32,10 @@ const complianceMetrics = [
 ]
 
 const kpis = [
-  { label: 'Accionistas activos', value: '1,247', change: '+12%', icon: Users },
-  { label: 'Resoluciones vigentes', value: '384', change: '+8%', icon: FileText },
-  { label: 'Compliance score', value: '98%', change: '+4%', icon: Shield },
-  { label: 'Horas legales ahorradas', value: '620', change: '+23%', icon: TrendingUp },
+  { label: 'Asistentes validados', value: '87%', change: 'Meet', icon: Users },
+  { label: 'Poderes revisados', value: '42', change: 'OK', icon: FileText },
+  { label: 'Quórum calculado', value: '78%', change: 'Legal', icon: Shield },
+  { label: 'Horas ahorradas', value: '620', change: '+23%', icon: TrendingUp },
 ]
 
 export default function GovernanceDashboard() {
@@ -51,9 +51,9 @@ export default function GovernanceDashboard() {
             <span className="font-mono text-xs uppercase tracking-widest text-acres-violet">Dashboard gobernanza</span>
           </div>
           <h2 className="mb-4 font-display text-4xl font-800 leading-tight text-white md:text-6xl">
-            Inteligencia de
+            Panel interno de
             <br />
-            <span className="gradient-text-cyan">accionistas y acuerdos</span>
+            <span className="gradient-text-cyan">sesiones, votos y acuerdos</span>
           </h2>
         </motion.div>
 
@@ -72,7 +72,7 @@ export default function GovernanceDashboard() {
 
         <div className="mb-8 grid grid-cols-1 gap-6 lg:grid-cols-3">
           <div className="glass rounded-2xl border border-acres-cyan/10 p-6">
-            <h3 className="mb-6 font-display text-sm font-700 text-white">Estructura accionarial</h3>
+            <h3 className="mb-6 font-display text-sm font-700 text-white">Participación representada</h3>
             <ResponsiveContainer width="100%" height={220}>
               <PieChart>
                 <Pie data={shareholderData} cx="50%" cy="50%" innerRadius={55} outerRadius={80} paddingAngle={3} dataKey="value">
@@ -84,7 +84,7 @@ export default function GovernanceDashboard() {
           </div>
 
           <div className="glass rounded-2xl border border-acres-cyan/10 p-6">
-            <h3 className="mb-6 font-display text-sm font-700 text-white">Historial de resoluciones</h3>
+            <h3 className="mb-6 font-display text-sm font-700 text-white">Resultado de votaciones</h3>
             <ResponsiveContainer width="100%" height={220}>
               <BarChart data={votingHistory} barSize={6}>
                 <CartesianGrid strokeDasharray="3 3" stroke="rgba(0, 212, 255, 0.08)" />
@@ -99,7 +99,7 @@ export default function GovernanceDashboard() {
           </div>
 
           <div className="glass rounded-2xl border border-acres-cyan/10 p-6">
-            <h3 className="mb-6 font-display text-sm font-700 text-white">Compliance score SMV</h3>
+            <h3 className="mb-6 font-display text-sm font-700 text-white">Integridad documental</h3>
             <ResponsiveContainer width="100%" height={220}>
               <AreaChart data={complianceMetrics}>
                 <defs>
@@ -121,7 +121,7 @@ export default function GovernanceDashboard() {
         <div className="glass rounded-2xl border border-acres-cyan/10 p-6">
           <h3 className="mb-6 font-display text-sm font-700 text-white">Alertas de gobernanza IA</h3>
           <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-4">
-            {['Junta ordinaria completada - Quórum 87%', 'Reporte SMV pendiente - Vence en 5 días', 'Resolución aprobada - 94% votos', 'Nuevo fideicomiso registrado'].map((alert, i) => (
+            {['Junta virtual importada desde Meet', 'Poder pendiente de validacion manual', 'Acuerdo aprobado - 94% votos ponderados', 'Hash de acta registrado en blockchain'].map((alert, i) => (
               <div key={alert} className="flex items-start gap-3 rounded-xl border border-acres-cyan/15 bg-acres-cyan/5 p-4">
                 {i === 1 ? <AlertCircle className="mt-0.5 h-4 w-4 flex-shrink-0 text-yellow-400" /> : <CheckCircle className="mt-0.5 h-4 w-4 flex-shrink-0 text-green-400" />}
                 <p className="text-xs leading-relaxed text-slate-300">{alert}</p>

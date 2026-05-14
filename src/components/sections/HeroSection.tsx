@@ -7,8 +7,8 @@ import { useEffect, useRef, useState } from 'react'
 const stats = [
   { value: 85, suffix: '%', label: 'Reducción trabajo manual', icon: TrendingUp },
   { value: 70, suffix: '%', label: 'Flujos legales más rápidos', icon: Cpu },
-  { value: 95, suffix: '%', label: 'Precisión voto automatizado', icon: Shield },
-  { value: 500, suffix: '+', label: 'Empresas en gobernanza', icon: Users },
+  { value: 95, suffix: '%', label: 'Trazabilidad de votos', icon: Shield },
+  { value: 100, suffix: '%', label: 'Evidencia auditable', icon: Users },
 ]
 
 function AnimatedCounter({ target, suffix }: { target: number; suffix: string }) {
@@ -44,29 +44,29 @@ export default function HeroSection() {
       <div className="relative z-10 mx-auto max-w-7xl text-center">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="glass mb-8 inline-flex items-center gap-2 rounded-full border border-acres-cyan/20 px-4 py-2">
           <div className="h-2 w-2 rounded-full bg-acres-cyan" />
-          <span className="font-mono text-xs uppercase tracking-widest text-acres-cyan">Gobernanza IA para juntas virtuales</span>
+          <span className="font-mono text-xs uppercase tracking-widest text-acres-cyan">Software interno para ACRES</span>
         </motion.div>
 
         <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15 }} className="mb-6 font-display text-5xl font-800 leading-none tracking-tight text-white md:text-7xl lg:text-8xl">
-          ACRES
+          GOBIA
           <br />
-          <span className="gradient-text-cyan">Gobernanza Corporativa</span>
+          <span className="gradient-text-cyan">Juntas automatizadas</span>
           <br />
-          <span className="text-4xl text-slate-300 md:text-5xl lg:text-6xl">asistida por Inteligencia Artificial</span>
+          <span className="text-4xl text-slate-300 md:text-5xl lg:text-6xl">para accionistas de ACRES</span>
         </motion.h1>
 
         <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className="mx-auto mb-10 max-w-3xl text-lg leading-relaxed text-slate-400 md:text-xl">
-          Plataforma para automatizar asistencia, quórum, conteo de votos, transcripción, acuerdos y borradores legales en juntas de accionistas virtuales por Google Meet.
+          Plataforma interna para que ACRES gestione juntas virtuales por Google Meet: asistencia, poderes, quórum, votaciones, acuerdos, transcripción, actas y evidencia sellada en blockchain.
         </motion.p>
 
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.45 }} className="mb-16 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <a href="#contact" className="group flex items-center gap-2 rounded-xl bg-gradient-to-r from-acres-cyan to-acres-purple px-8 py-4 text-sm font-semibold text-white shadow-2xl shadow-acres-cyan/30 transition-all hover:opacity-90">
-            Solicitar demo empresarial
+            Presentar propuesta
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
           </a>
           <a href="#documents" className="glass group flex items-center gap-2 rounded-xl border border-acres-cyan/20 px-8 py-4 text-sm font-medium text-acres-cyan transition-all hover:bg-acres-cyan/10">
             <Play className="h-4 w-4" />
-            Ver módulos
+            Ver flujo de junta
           </a>
         </motion.div>
 

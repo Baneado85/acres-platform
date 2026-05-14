@@ -2,7 +2,7 @@ import { ArrowRight, Zap } from 'lucide-react'
 
 const footerLinks = {
   Plataforma: ['Dashboard IA', 'Documentos legales', 'Votación asistida', 'Compliance SMV'],
-  Empresa: ['Sobre ACRES', 'Equipo', 'Regulatorio', 'Carreras'],
+  Cliente: ['ACRES', 'Abogados', 'Accionistas', 'Operaciones'],
   Recursos: ['Guías', 'API', 'Webinars', 'Soporte'],
   Legal: ['Términos', 'Privacidad', 'Aviso legal', 'Cookies'],
 }
@@ -14,14 +14,14 @@ export default function Footer() {
       <div className="relative z-10 mx-auto max-w-7xl">
         <div className="glass relative mb-16 overflow-hidden rounded-2xl border border-acres-cyan/20 p-10 text-center">
           <h3 className="mb-4 font-display text-3xl font-800 text-white md:text-4xl">
-            Listo para presentar una
-            <span className="gradient-text-cyan"> propuesta alternativa</span>
+            GOBIA como
+            <span className="gradient-text-cyan"> software interno para ACRES</span>
           </h3>
           <p className="mx-auto mb-8 max-w-xl text-slate-400">
-            Una demo visual ayuda a explicar el alcance: servicio por junta, piloto y plataforma interna.
+            Una demo visual ayuda a explicar el alcance: asistencia, poderes, quorum, votacion, acuerdos, actas y evidencia blockchain.
           </p>
           <a href="#contact" className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-acres-cyan to-acres-purple px-8 py-4 text-sm font-semibold text-white">
-            Solicitar demo empresarial
+            Presentar GOBIA
             <ArrowRight className="h-4 w-4" />
           </a>
         </div>
@@ -33,12 +33,12 @@ export default function Footer() {
                 <Zap className="h-5 w-5 text-white" />
               </div>
               <div>
-                <div className="font-display text-sm font-800 tracking-widest text-white">ACRES</div>
-                <div className="font-mono text-[8px] uppercase tracking-[0.15em] text-acres-cyan/60">Sociedad Titulizadora</div>
+                <div className="font-display text-sm font-800 tracking-widest text-white">GOBIA</div>
+                <div className="font-mono text-[8px] uppercase tracking-[0.15em] text-acres-cyan/60">Para ACRES</div>
               </div>
             </div>
             <p className="text-xs leading-relaxed text-slate-400">
-              Plataforma de gobernanza corporativa e inteligencia fiduciaria impulsada por IA.
+              Software de juntas, votaciones, documentos y trazabilidad para uso interno de ACRES.
             </p>
           </div>
 
@@ -57,7 +57,7 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col items-center justify-between gap-4 border-t border-acres-cyan/10 pt-8 md:flex-row">
-          <div className="font-mono text-xs text-slate-500">© 2026 ACRES Sociedad Titulizadora S.A. - Lima, Perú</div>
+          <div className="font-mono text-xs text-slate-500">© 2026 GOBIA - Propuesta de software para ACRES</div>
           <div className="font-mono text-xs text-slate-500">Powered by IA generativa</div>
         </div>
       </div>
