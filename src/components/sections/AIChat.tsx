@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { Bot, Loader2, Minimize2, Send, User, X } from 'lucide-react'
+import { generateGeminiText, type GeminiContent } from '@/lib/gemini'
 
 interface Message {
   role: 'user' | 'assistant'
@@ -57,23 +58,18 @@ export default function AIChat() {
     setLoading(true)
 
     try {
-      const history = messages.slice(1).map((m) => ({
+      const history: GeminiContent[] = messages.slice(1).map((m) => ({
         role: m.role === 'assistant' ? 'model' : 'user',
         parts: [{ text: m.content }],
       }))
 
-      const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          system_instruction: { parts: [{ text: SYSTEM_CONTEXT }] },
-          contents: [...history, { role: 'user', parts: [{ text: prompt }] }],
-          generationConfig: { temperature: 0.7, maxOutputTokens: 1024 },
-        }),
+      const { text: aiText } = await generateGeminiText({
+        apiKey,
+        systemInstruction: SYSTEM_CONTEXT,
+        contents: [...history, { role: 'user', parts: [{ text: prompt }] }],
+        temperature: 0.7,
+        maxOutputTokens: 1024,
       })
-      const data = await response.json()
-      if (data.error) throw new Error(data.error.message)
-      const aiText = data.candidates?.[0]?.content?.parts?.[0]?.text || 'No pude procesar la consulta.'
       setMessages((prev) => [...prev, { role: 'assistant', content: aiText, timestamp: new Date() }])
     } catch (err) {
       const message = err instanceof Error ? err.message : 'Error desconocido'

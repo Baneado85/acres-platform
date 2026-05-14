@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { CheckCheck, ChevronDown, Copy, Download, FileText, Loader2, Sparkles } from 'lucide-react'
 import { useInView } from 'react-intersection-observer'
+import { generateGeminiText } from '@/lib/gemini'
 
 const docTypes = [
   'Acta de Junta de Accionistas',
@@ -42,17 +43,13 @@ export default function AIDocumentGenerator() {
     const prompt = `Eres un experto en derecho corporativo peruano y juntas de accionistas. Genera un documento profesional del tipo "${selectedDoc}" para uso interno de ACRES dentro de GOBIA. Detalles: ${details}. Incluye encabezado, antecedentes, considerandos, acuerdos, cuadro de asistencia, quorum y votacion cuando aplique, observaciones sobre poderes y firmas. Responde en español.`
 
     try {
-      const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${key}`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          contents: [{ role: 'user', parts: [{ text: prompt }] }],
-          generationConfig: { temperature: 0.3, maxOutputTokens: 2048 },
-        }),
+      const { text } = await generateGeminiText({
+        apiKey: key,
+        contents: [{ role: 'user', parts: [{ text: prompt }] }],
+        temperature: 0.3,
+        maxOutputTokens: 2048,
       })
-      const data = await response.json()
-      if (data.error) throw new Error(data.error.message)
-      setGenerated(data.candidates?.[0]?.content?.parts?.[0]?.text || 'No se pudo generar el documento.')
+      setGenerated(text)
     } catch (err) {
       const message = err instanceof Error ? err.message : 'Error desconocido'
       setGenerated(`Error al conectar con Gemini AI: ${message}`)
