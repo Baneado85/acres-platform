@@ -4,6 +4,20 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-cyan-400 px-3 py-2 text-sm font-bold text-slate-950 transition hover:bg-cyan-300 disabled:opacity-50;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border border-slate-700 px-3 py-2 text-sm font-semibold text-slate-200 transition hover:bg-slate-800;
+  }
+
+  .input-cell {
+    @apply w-full rounded-md border border-transparent bg-transparent px-2 py-1 text-sm text-inherit outline-none transition focus:border-cyan-400/40 focus:bg-slate-950;
+  }
+}
+
 :root {
   --font-display: 'Syne', sans-serif;
   --font-body: 'Syne', sans-serif;

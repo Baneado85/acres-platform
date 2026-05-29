@@ -4,14 +4,18 @@ GOBIA es una aplicacion operativa, no una landing. Esta pensada para que ACRES g
 
 ## Que hace ahora
 
-- Workspace interno de una junta activa.
+- Login demo para abogados y administradores.
+- Dashboard con juntas programadas, finalizadas, empresas registradas y asistencia promedio.
+- Registro de empresas con razon social, RUC, direccion, correo y tipo societario.
+- Registro de accionistas con nombre, DNI/RUC, correo, porcentaje accionario y empresa.
 - Control de asistentes importados desde Google Meet.
-- Revision de poderes: valido, pendiente o no requerido.
 - Calculo de quorum por acciones representadas.
 - Votacion por acuerdo dentro de la plataforma.
 - Conteo ponderado por acciones, no solo por persona.
 - Generacion de acta/reporte con IA desde backend.
-- Copiloto legal-operativo con IA desde backend.
+- Exportacion de actas a PDF y Word.
+- Historial de actas, buscador, filtros y logs de auditoria.
+- Modo oscuro.
 - Registro conceptual de evidencia con hash SHA-256 para trazabilidad blockchain.
 
 ## Arquitectura
@@ -29,6 +33,8 @@ Crea un archivo `.env.local` en la raiz del proyecto:
 
 ```bash
 GEMINI_API_KEY=tu_api_key_de_gemini
+NEXT_PUBLIC_SUPABASE_URL=tu_url_de_supabase
+NEXT_PUBLIC_SUPABASE_ANON_KEY=tu_anon_key_de_supabase
 ```
 
 Hay un archivo de ejemplo:
@@ -38,6 +44,8 @@ Hay un archivo de ejemplo:
 ```
 
 Importante: no subas `.env.local` a GitHub. Ya esta cubierto por `.gitignore`.
+
+La app funciona con datos demo aunque Supabase no este configurado. Supabase queda preparado para persistir empresas, accionistas, asambleas, votos, actas y auditoria.
 
 ## Instalacion
 
