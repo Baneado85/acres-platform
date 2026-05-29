@@ -1,28 +1,43 @@
-# GOBIA - ACRES Platform
+# GOBIA - Software interno para juntas de ACRES
 
-Plataforma demo para presentar GOBIA, una propuesta de software interno para ACRES Sociedad Titulizadora. El objetivo es automatizar juntas virtuales de accionistas: asistencia, poderes, quorum, votaciones, acuerdos, actas y evidencia auditable.
+GOBIA es una aplicacion operativa, no una landing. Esta pensada para que ACRES gestione internamente juntas virtuales de accionistas: asistencia, poderes, quorum, votaciones, acuerdos, actas, reportes y evidencia auditable.
 
-## Que Incluye
+## Que hace ahora
 
-- Landing interactiva para presentar GOBIA como herramienta para ACRES.
-- Dashboard de gobernanza y estructura accionarial.
-- Modulos para Google Meet, asistencia, poderes, quorum, votacion, actas y seguimiento de acuerdos.
-- Registro conceptual de hashes en blockchain para integridad de evidencias.
-- Generador de documentos legales conectado a Gemini API.
-- Chat corporativo IA para consultas sobre sesiones, votos, poderes y documentos.
-- Marketplace conceptual de agentes de automatizacion.
-- Modelo comercial por fases: servicio por junta, plan recurrente y plataforma enterprise.
+- Workspace interno de una junta activa.
+- Control de asistentes importados desde Google Meet.
+- Revision de poderes: valido, pendiente o no requerido.
+- Calculo de quorum por acciones representadas.
+- Votacion por acuerdo dentro de la plataforma.
+- Conteo ponderado por acciones, no solo por persona.
+- Generacion de acta/reporte con IA desde backend.
+- Copiloto legal-operativo con IA desde backend.
+- Registro conceptual de evidencia con hash SHA-256 para trazabilidad blockchain.
 
-## Stack
+## Arquitectura
 
-- Next.js 14
-- React 18
-- TypeScript
-- Tailwind CSS
-- Framer Motion
-- Recharts
-- Lucide React
-- Gemini API
+- Frontend: Next.js + React + TypeScript + Tailwind CSS.
+- Backend: Next.js API Routes.
+- IA: Gemini API llamada desde el backend.
+- Seguridad de API key: `GEMINI_API_KEY` vive solo en `.env.local`.
+
+El navegador nunca recibe la API key.
+
+## Variables de entorno
+
+Crea un archivo `.env.local` en la raiz del proyecto:
+
+```bash
+GEMINI_API_KEY=tu_api_key_de_gemini
+```
+
+Hay un archivo de ejemplo:
+
+```bash
+.env.example
+```
+
+Importante: no subas `.env.local` a GitHub. Ya esta cubierto por `.gitignore`.
 
 ## Instalacion
 
@@ -30,13 +45,13 @@ Plataforma demo para presentar GOBIA, una propuesta de software interno para ACR
 npm install
 ```
 
-## Desarrollo Local
+## Desarrollo local
 
 ```bash
 npm run dev
 ```
 
-Luego abre:
+Abre:
 
 ```bash
 http://localhost:3000
@@ -48,58 +63,26 @@ http://localhost:3000
 npm run build
 ```
 
-El proyecto esta configurado con `output: 'export'`, por lo que genera una version estatica en la carpeta `out`.
-
-## Lint
+## Produccion
 
 ```bash
-npm run lint
+npm run build
+npm run start
 ```
 
-## Gemini API
+## Despliegue
 
-El chat y el generador de documentos permiten ingresar una API key de Gemini desde la interfaz. La key se guarda en `localStorage` del navegador bajo:
+Como GOBIA ahora tiene backend, no debe desplegarse como GitHub Pages estatico. Usa una plataforma que soporte Next.js con API routes, por ejemplo:
 
-```txt
-acres_gemini_key
-```
+- Vercel
+- Render
+- Railway
+- VPS propio
 
-Puedes obtener una key en:
+En produccion configura `GEMINI_API_KEY` como variable secreta del servidor.
 
-[Google AI Studio](https://aistudio.google.com)
+## Nota legal y de seguridad
 
-## Despliegue en GitHub Pages
+La IA genera borradores y apoyo operativo. Todo quorum, poder, voto, acuerdo, acta y documento debe ser validado por abogados de ACRES antes de uso formal.
 
-El proyecto incluye el script:
-
-```bash
-npm run deploy
-```
-
-Antes de usarlo, confirma si el repositorio necesita `basePath` en `next.config.js`. Para un repo como:
-
-```txt
-https://github.com/Baneado85/acres-platform
-```
-
-normalmente se debe activar:
-
-```js
-basePath: '/acres-platform'
-```
-
-si se publica en `https://baneado85.github.io/acres-platform/`.
-
-## Scripts
-
-```bash
-npm run dev      # servidor local
-npm run build    # build de produccion/export estatico
-npm run start    # servidor Next de produccion
-npm run lint     # revision ESLint
-npm run deploy   # build y publicacion con gh-pages
-```
-
-## Nota Legal
-
-Esta plataforma es una demo/propuesta. La IA acelera tareas operativas como transcripcion, resumen, conteo preliminar y redaccion de borradores, pero todo documento, quorum, voto, poder y acuerdo debe ser validado por abogados antes de su uso formal. El componente blockchain debe registrar evidencias o hashes, no datos sensibles en texto plano.
+Para blockchain, la recomendacion es registrar hashes de evidencia o documentos, no datos sensibles en texto plano.
